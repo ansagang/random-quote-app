@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Random quote app!</Text>
-      <StatusBar style="dark" />
+      <StatusBar style="auto" />
     </View>
   );
 }
