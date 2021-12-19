@@ -1,21 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import Home from './screens/Home';
+import { StyleSheet } from 'react-native';
 
 export default function App() {
+  const styles = StyleSheet.create({
+    wrapper: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  });
   return (
-    <View style={styles.container}>
-      <Text>Random quote app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.wrapper}>
+      <Home />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
