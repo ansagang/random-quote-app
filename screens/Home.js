@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { TouchableOpacity } from 'react-native';
+import { Image } from 'react-native';
 
 export default function Home() {
     const styles = StyleSheet.create({
@@ -56,6 +57,22 @@ export default function Home() {
             textAlign: 'center',
             fontWeight: 'bold',
             fontSize: 16
+        },
+        buttonsPanel: {
+            flexDirection: 'row',
+            marginTop:15,
+            justifyContent:'space-around',
+            alignItems:'center'
+        },
+        buttonPanel: {
+            borderRadius: 50,
+            borderColor: '#c11a2b',
+            borderWidth: 1,
+            padding:10,
+        },
+        buttonPanelImg:{
+            width:30,
+            height:30
         }
     });
 
@@ -83,22 +100,22 @@ export default function Home() {
                     quoteLoading ?
                         (
                             quote ?
-                            (
-                                <>
-                                    <Text style={styles.title}>Quote of the day</Text>
-                                    <View style={styles.quote}>
-                                        <Text style={styles.info}>{quote.content}</Text>
-                                        <Text style={styles.note}>{`-${quote.author}`}</Text>
-                                    </View>
-                                    <TouchableOpacity style={styles.button} onPress={() => randomQuote()}>
-                                        <Text style={styles.buttonText}>New Quote</Text>
-                                    </TouchableOpacity>
-                                </>
-                            )
-                            :
-                            (
-                                <Text style={styles.title}>Error, try to reload the app</Text>
-                            )
+                                (
+                                    <>
+                                        <Text style={styles.title}>Quote of the day</Text>
+                                        <View style={styles.quote}>
+                                            <Text style={styles.info}>{quote.content}</Text>
+                                            <Text style={styles.note}>{`-${quote.author}`}</Text>
+                                        </View>
+                                        <TouchableOpacity style={styles.button} onPress={() => randomQuote()}>
+                                            <Text style={styles.buttonText}>New Quote</Text>
+                                        </TouchableOpacity>
+                                    </>
+                                )
+                                :
+                                (
+                                    <Text style={styles.title}>Error, try to reload the app</Text>
+                                )
                         )
                         :
                         <Text style={styles.title}>Loading...</Text>
